@@ -1,0 +1,9 @@
+pandas
+sklearn
+matplotlib
+seaborn
+numpy
+mlflow
+mlflow.sklearn
+sklearn
+urllib.parse
