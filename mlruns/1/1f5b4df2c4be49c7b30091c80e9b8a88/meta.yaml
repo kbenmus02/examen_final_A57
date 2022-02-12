@@ -1,0 +1,15 @@
+artifact_uri: file:///__w/examen_final_A57/examen_final_A57/mlruns/1/1f5b4df2c4be49c7b30091c80e9b8a88/artifacts
+end_time: 1644635528548
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+name: ''
+run_id: 1f5b4df2c4be49c7b30091c80e9b8a88
+run_uuid: 1f5b4df2c4be49c7b30091c80e9b8a88
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1644635526194
+status: 3
+tags: []
+user_id: root
