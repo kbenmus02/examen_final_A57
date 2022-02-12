@@ -15,12 +15,12 @@ jobs:
           # Your ML workflow goes here
           pip install -r requirements.txt
           mlflow ui
-          
+
           #python Pointure_GaussianNB.ipynb
           jupyter nbconvert --to notebook --execute Pointure_GaussianNB.ipynb
 
           # Write your CML report
-          echo "## Metriques:" > report.md
+          echo "# Metriques:" > report.md
           cat metrics.txt >> report.md
 
           ls -lrt 
