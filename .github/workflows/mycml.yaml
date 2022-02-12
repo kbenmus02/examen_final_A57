@@ -14,8 +14,10 @@ jobs:
         run: |
           # Your ML workflow goes here
           pip install -r requirements.txt
-          mlflow ui
-
+          
+          export MLFLOW_TRACKING_USERNAME=mkbensmaia
+          export MLFLOW_TRACKING_PASSWORD=faec1e24063e41eaf6fa47c676d5549bf3df6e36
+          
           #python Pointure_GaussianNB.ipynb
           jupyter nbconvert --to notebook --execute Pointure_GaussianNB.ipynb
 
