@@ -9,13 +9,30 @@ jobs:
       - name: cml_run
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USERNAME: "$GITHUB_USERNAME"
+          GITHUB_EMAIL: "$GITHUB_EMAIL"
         run: |
           # Your ML workflow goes here
           pip install -r requirements.txt
           #python Pointure_GaussianNB.ipynb
           jupyter nbconvert --to notebook --execute Pointure_GaussianNB.ipynb
+
           # Write your CML report
-          echo "## Metriques:" >> report.md
+          echo "## Metriques:" > report.md
           cat metrics.txt >> report.md
 
-     
+          ls -lrt 
+          
+          git config --local user.email "$GITHUB_EMAIL"
+          git config --local user.name "$GITHUB_USERNAME"
+          git add requirements_docker.txt python_version.txt temoin51.txt
+        
+          echo $(date +%Z)
+          git commit --allow-empty -m "push at $(date +%d-%b-%H_%M)"
+          git tag -a "v1.0" -m "tag avec temoin.txt depuis gitactions"
+          git push --follow-tags
+          #git push --tags
+          #git push
+
+
+      
