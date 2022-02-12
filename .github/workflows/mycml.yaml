@@ -22,10 +22,10 @@ jobs:
           cat metrics.txt >> report.md
 
           ls -lrt 
-          
+
           git config --local user.email "$GITHUB_EMAIL"
           git config --local user.name "$GITHUB_USERNAME"
-          git add requirements_docker.txt python_version.txt temoin51.txt
+          git add mlruns metrics.txt report.md
         
           echo $(date +%Z)
           git commit --allow-empty -m "push at $(date +%d-%b-%H_%M)"
