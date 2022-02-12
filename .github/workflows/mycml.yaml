@@ -14,6 +14,8 @@ jobs:
         run: |
           # Your ML workflow goes here
           pip install -r requirements.txt
+          mlflow ui
+          
           #python Pointure_GaussianNB.ipynb
           jupyter nbconvert --to notebook --execute Pointure_GaussianNB.ipynb
 
@@ -22,6 +24,7 @@ jobs:
           cat metrics.txt >> report.md
 
           ls -lrt 
+          
 
           git config --local user.email "$GITHUB_EMAIL"
           git config --local user.name "$GITHUB_USERNAME"
@@ -30,9 +33,8 @@ jobs:
           echo $(date +%Z)
           git commit --allow-empty -m "push at $(date +%d-%b-%H_%M)"
           git tag -a "v1.0" -m "tag avec temoin.txt depuis gitactions"
+
           git push --follow-tags
-          #git push --tags
-          #git push
 
 
       
